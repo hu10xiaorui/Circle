@@ -74,8 +74,15 @@ def main():
 
 
 
-import tkinter
-from tkinter.constants import *
+import sys
+if sys.version_info < (3, 0):
+    # Python 2
+    import Tkinter as tk
+    from tkinter.constants import *
+else:
+    # Python 3
+    import tkinter as tk
+    from tkinter.constants import *
 tk = tkinter.Tk()
 frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
 frame.pack(fill=BOTH,expand=1)
